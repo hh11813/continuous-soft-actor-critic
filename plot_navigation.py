@@ -29,6 +29,8 @@ def run_benchmark() -> List[str]:
     # Configure benchmark
     tasks = [
         VmasTask.NAVIGATION.get_from_yaml()
+        #VmasTask.SAMPLING.get_from_yaml(),
+        #VmasTask.BALANCE.get_from_yaml(),
         ]
     algorithm_configs = [
         QmixConfig.get_from_yaml(),
