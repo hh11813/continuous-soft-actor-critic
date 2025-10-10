@@ -70,7 +70,7 @@ Replace the existing `/BenchMARL/benchmarl/algorithms/__init__.py` file with the
 ```setup
 dt: float = 0.01,  # 0.1,   
 ```
-5. Add the provided `plot_navigation.py`,` files to the directories `/BenchMARL/examples/plotting/​`
+5. Add the provided `plot_navigation.py`, files to the directories `/BenchMARL/examples/plotting/​`
 
 ## Training and Evaluation
 To train and evaluate the model(s) in the paper, run this command:
@@ -80,7 +80,7 @@ python /BenchMARL/examples/plotting/plot_navigation.py
 ```
 ## Technical Guidelines
 
-### ​​Adjust Time-Step (dt) for Simulations​​
+### ​​Adjust Time-Step for Simulations​​
 If comparing performance across different ​​discrete time-steps​, ensure to modify the time-step parameter in `core.py` (simulation environment) :
 ```setup
 dt: float = 0.01,  # 0.1.  
@@ -99,5 +99,5 @@ Adjust the ​​learning rates​​ in `base_experiment.yaml` to match the exp
 
 ### ​​Adjustment of reward function
 
-We can modify the reward function in the corresponding simulation environment in 'VectorizedMultiAgentSimulator/vmas/scenarios' by scaling it with '1/dt' (where dt is defined in 'test.yaml'), while simultaneously scaling the hyperparameters in `base_experiment.yaml​`.
+We can modify the reward function in the corresponding simulation environment in `VectorizedMultiAgentSimulator/vmas/scenarios` by scaling it with `1/dt` (where `dt` is defined in `test.yaml`), while simultaneously scaling the hyperparameters in `base_experiment.yaml​`.
 
