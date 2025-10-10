@@ -23,7 +23,7 @@ def run_benchmark() -> List[str]:
     experiment_config = ExperimentConfig.get_from_yaml()
     experiment_config.save_folder = Path(os.path.dirname(os.path.realpath(__file__)))
     experiment_config.loggers = []
-    experiment_config.max_n_iters = 10
+    experiment_config.max_n_iters = 100
 
 
     # Configure benchmark
@@ -91,6 +91,6 @@ if __name__ == "__main__":
     
     Plotting.probability_of_improvement(
         environment_comparison_matrix,
-        algorithms_to_compare=[["qmix","iql","mappo","masac","maddpg"]]
+        algorithms_to_compare=[["qmix","iql","mappo","masac","maddpg","test"]]
     )
     plt.show()
