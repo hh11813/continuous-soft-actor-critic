@@ -70,7 +70,7 @@ Replace the existing `/BenchMARL/benchmarl/algorithms/__init__.py` file with the
 ```setup
 dt: float = 0.01,  # 0.1,   
 ```
-5. Add the provided `plot_navigation.py`, files to the directories `/BenchMARL/examples/plotting/​`
+5. Add the provided `plot.py`, files to the directories `/BenchMARL/examples/plotting/​`
 
 ## Training and Evaluation
 To train and evaluate the model(s) in the paper, run this command:
