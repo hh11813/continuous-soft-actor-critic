@@ -3,6 +3,7 @@
 # Licensed under the MIT License. See LICENSE for details.
 
 import os
+#Please replace it with your address
 target_dir="/home"
 import torch
 from pathlib import Path
