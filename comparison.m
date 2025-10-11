@@ -1,3 +1,6 @@
+clearvars;
+clear all;
+clc;
 % dynamic parameters
 A = -1;
 B = 0;
@@ -314,7 +317,7 @@ grad_phi = grad_phi';
 end
 %SARSA
 function [grad_theta] = qlearn_para(theta, xt_path,xt_path_next,rt_path,at_path,at_path_next, dt,rho,lam,ent)
-
+grad_theta = theta - theta;
 q = @(a,x) (-0.5 * exp(-theta(3)) * (a - theta(1) * x - theta(2)).^2 + theta(4) * x.^2 + theta(5)*x);
 
 test_func_1 = @(a,x) exp(-theta(3)) * (a - theta(1) * x - theta(2)) .* x;
@@ -339,7 +342,7 @@ grad_theta = grad_theta';
 end
 %qv-learn
 function [grad_theta] = qv_learn_para(theta_q,theta_v, xt_path, xt_path_next,rt_path,at_path, dt,lam)
-
+grad_theta = [theta_q - theta_q; theta_v - theta_v]; 
 q = @(a,x) -0.5 * exp(-theta_q(3)) * (a - theta_q(1) * x - theta_q(2)).^2 - 0.5*lam*(log(2*pi*lam) + theta_q(3));
 v = @(x) theta_v(1)*x.^2 + theta_v(2)*x;
 
@@ -365,7 +368,8 @@ grad_theta = grad_theta';
 end
 %csac
 function [grad_theta,grad_phi] = test_learn_para(pdf_b,theta,phi, xt_path, xt_path_next,rt_path,at_path, dt,lam)
-
+grad_theta = theta - theta;
+grad_phi = phi - phi;
 p= @(a,x) -0.5 * exp(-phi(3)) * (a - phi(1) * x - phi(2)).^2 - 0.5*(log(2*pi) + phi(3));
 v = @(x) theta(1)*x.^2./2 + theta(2)*x;
 dmt = v(xt_path_next) - v(xt_path) + dt * ( rt_path - lam*p(at_path, xt_path)-theta(3));
@@ -392,5 +396,6 @@ grad_theta = grad_theta';
 grad_phi = mean([xi_1, xi_2, xi_3] .*dmt-lam.* [xi_1, xi_2, xi_3]*dt, 1);
 grad_phi = grad_phi';
 end
+
 
 
