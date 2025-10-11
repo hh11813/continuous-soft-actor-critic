@@ -76,7 +76,7 @@ dt: float = 0.01,  # 0.1,
 To train and evaluate the model(s) in the paper, run this command:
 
 ```train
-python /BenchMARL/examples/plotting/plot_navigation.py
+python BenchMARL/examples/plotting/plot_navigation.py
 ```
 ## Technical Guidelines
 
