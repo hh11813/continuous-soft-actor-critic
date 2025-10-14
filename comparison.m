@@ -38,7 +38,7 @@ dw = sqrt(dt) * randn(nt,1);
 
 M = 10^5;
 % create behavioral data
-b_m = [1,1]; %[0.5,0.5]
+b_m = [1,1]; %[-1,-1]
 b_v = 1;
 
 x_path_b = x0 * ones(nt+1,1);
@@ -171,7 +171,7 @@ hold on
 plot(0:M, lam*exp(learned_para(:,3)),'b','LineWidth',2)
 hold on
 plot(0:M, lam*exp(psi_true(3)) * ones(M+1,1),'b--','LineWidth',2)
-ylim([-10,10])
+ylim([-10,20])
 legend('\psi_1 Path','True Value \psi_1','\psi_2 Path','True Value \psi_2','\lambda*e^{\psi_3} Path','True Value \lambda*e^{\psi_3}')
 set(gca,'FontSize',12);
 xlabel('Iteration','fontsize',14)
@@ -396,6 +396,7 @@ grad_theta = grad_theta';
 grad_phi = mean([xi_1, xi_2, xi_3] .*dmt-lam.* [xi_1, xi_2, xi_3]*dt, 1);
 grad_phi = grad_phi';
 end
+
 
 
 
