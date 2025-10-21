@@ -78,6 +78,7 @@ To train and evaluate the model(s) in the paper, run this command:
 ```train
 python BenchMARL/examples/plotting/plot_navigation.py
 ```
+The script is configured to run on Linux systems by default. If you are executing it on a Windows system, please replace the corresponding paths.
 ## Technical Guidelines
 
 ### ​​Adjust Time-Step for Simulations​​
